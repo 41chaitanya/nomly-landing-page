@@ -1,0 +1,684 @@
+/* ==============================================
+   SWIGGY-THEMED FOOD DELIVERY — STYLE.CSS
+   Colors: Orange #FC8019, White #FFFFFF, Dark #282c3f
+   ============================================== */
+
+/* ---------- CSS Variables (Design Tokens) ---------- */
+:root {
+  --orange:       #FC8019;
+  --orange-dark:  #E06C14;
+  --orange-light: #FFF3E9;
+  --dark:         #282c3f;
+  --dark-soft:    #3d4152;
+  --gray:         #686b78;
+  --gray-light:   #f2f2f2;
+  --white:        #ffffff;
+  --green:        #60b246;
+
+  --font-main:    'Inter', sans-serif;
+  --font-display: 'Bricolage Grotesque', sans-serif;
+  --font-mono:    'Space Mono', monospace;
+
+  --radius-sm:    8px;
+  --radius-md:    16px;
+  --radius-lg:    24px;
+  --radius-pill:  999px;
+
+  --shadow-card:  0 2px 18px rgba(40, 44, 63, 0.12);
+  --shadow-hover: 0 8px 32px rgba(252, 128, 25, 0.22);
+}
+
+/* ---------- Reset & Base ---------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-main);
+  background: var(--white);
+  color: var(--dark);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  letter-spacing: -0.01em;
+}
+
+:focus-visible {
+  outline: 3px solid var(--orange);
+  outline-offset: 3px;
+}
+
+/* ---------- Layout Wrapper ---------- */
+.wrap {
+  width: 100%;
+  max-width: 1180px;
+  margin: 0 auto;
+  padding: 0 32px;
+}
+
+/* ---------- Eyebrow Labels ---------- */
+.eyebrow {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 0.72rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--orange);
+  margin-bottom: 12px;
+}
+
+.eyebrow-dark {
+  color: var(--orange-dark);
+}
+
+/* ---------- Buttons ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 28px;
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+  font-size: 0.95rem;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.15s;
+}
+
+.btn-primary {
+  background: var(--orange);
+  color: var(--white);
+}
+
+.btn-primary:hover {
+  background: var(--orange-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(252, 128, 25, 0.35);
+}
+
+.btn-ghost {
+  border-color: var(--orange);
+  color: var(--orange);
+  background: transparent;
+}
+
+.btn-ghost:hover {
+  background: var(--orange);
+  color: var(--white);
+}
+
+.btn-small {
+  padding: 10px 20px;
+  font-size: 0.88rem;
+  background: var(--orange);
+  color: var(--white);
+}
+
+.btn-large {
+  padding: 16px 40px;
+  font-size: 1.05rem;
+}
+
+/* =============================================
+   HEADER
+   ============================================= */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: var(--white);
+  box-shadow: 0 2px 12px rgba(40, 44, 63, 0.1);
+}
+
+.header-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-top: 16px;
+  padding-bottom: 16px;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 800;
+  color: var(--orange);
+}
+
+.logo-mark {
+  width: 34px;
+  height: 34px;
+  color: var(--orange);
+}
+
+.main-nav {
+  display: flex;
+  gap: 32px;
+  font-weight: 500;
+  font-size: 0.95rem;
+  color: var(--dark-soft);
+}
+
+.main-nav a:hover {
+  color: var(--orange);
+}
+
+/* =============================================
+   HERO
+   ============================================= */
+.hero {
+  background: var(--orange-light);
+  padding: 72px 0 60px;
+  overflow: hidden;
+}
+
+.hero-inner {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.hero h1 {
+  font-size: clamp(2.4rem, 5vw, 4rem);
+  line-height: 1.05;
+  color: var(--dark);
+}
+
+.hero h1 span {
+  color: var(--orange);
+}
+
+.hero-sub {
+  margin-top: 18px;
+  max-width: 460px;
+  font-size: 1.05rem;
+  color: var(--gray);
+}
+
+.hero-actions {
+  display: flex;
+  gap: 16px;
+  margin-top: 32px;
+  flex-wrap: wrap;
+}
+
+.hero-stats {
+  display: flex;
+  gap: 36px;
+  margin-top: 44px;
+  padding-top: 24px;
+  border-top: 1px solid rgba(252, 128, 25, 0.25);
+  max-width: 480px;
+}
+
+.hero-stats strong {
+  display: block;
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  color: var(--orange);
+}
+
+.hero-stats span {
+  font-size: 0.78rem;
+  color: var(--gray);
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.hero-visual {
+  position: relative;
+  display: flex;
+  justify-content: center;
+}
+
+.hero-blob {
+  width: 100%;
+  max-width: 420px;
+  aspect-ratio: 1 / 1;
+  border-radius: 48% 52% 55% 45% / 55% 45% 55% 45%;
+  overflow: hidden;
+  border: 4px solid var(--orange);
+  background: var(--orange);
+}
+
+.hero-blob img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Rotating stamp badge */
+.stamp {
+  position: absolute;
+  top: -24px;
+  right: -8px;
+  width: 130px;
+  height: 130px;
+  animation: spin 16s linear infinite;
+}
+
+.stamp svg {
+  width: 100%;
+  height: 100%;
+}
+
+.stamp-ring {
+  fill: none;
+  stroke: var(--orange);
+  stroke-width: 2;
+}
+
+.stamp text {
+  fill: var(--dark);
+  font-family: var(--font-mono);
+}
+
+.stamp-center {
+  font-size: 14px;
+  font-weight: 700;
+  fill: var(--orange);
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stamp { animation: none; }
+}
+
+/* =============================================
+   MARQUEE STRIP
+   ============================================= */
+.marquee {
+  background: var(--orange);
+  color: var(--white);
+  overflow: hidden;
+  padding: 14px 0;
+}
+
+.marquee-track {
+  display: flex;
+  gap: 48px;
+  white-space: nowrap;
+  font-family: var(--font-mono);
+  font-size: 1rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  animation: scroll 22s linear infinite;
+  width: max-content;
+}
+
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .marquee-track { animation: none; }
+}
+
+/* =============================================
+   SECTION HEADINGS
+   ============================================= */
+.section-head {
+  max-width: 580px;
+  margin-bottom: 44px;
+}
+
+.section-head h2 {
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  color: var(--dark);
+}
+
+/* =============================================
+   MENU SECTION
+   ============================================= */
+.menu {
+  padding: 88px 0;
+  background: var(--white);
+}
+
+/* Filter Tabs */
+.tabs {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 40px;
+  flex-wrap: wrap;
+}
+
+.tab {
+  font-family: var(--font-main);
+  font-size: 0.88rem;
+  font-weight: 600;
+  padding: 10px 22px;
+  border-radius: var(--radius-pill);
+  border: 2px solid var(--gray-light);
+  background: var(--gray-light);
+  color: var(--gray);
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s, border-color 0.2s;
+}
+
+.tab:hover {
+  border-color: var(--orange);
+  color: var(--orange);
+}
+
+.tab.is-active {
+  background: var(--orange);
+  border-color: var(--orange);
+  color: var(--white);
+}
+
+/* Food Cards Grid */
+.menu-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.food-card {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-card);
+  border: 1px solid var(--gray-light);
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.food-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-hover);
+}
+
+.food-img {
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+}
+
+.food-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+
+.food-card:hover .food-img img {
+  transform: scale(1.05);
+}
+
+.food-info {
+  padding: 18px 20px;
+}
+
+.food-info h3 {
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+  color: var(--dark);
+}
+
+.food-info p {
+  font-size: 0.88rem;
+  color: var(--gray);
+  margin-bottom: 14px;
+}
+
+.food-meta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.price {
+  font-family: var(--font-mono);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--dark);
+}
+
+.tag {
+  font-size: 0.75rem;
+  font-weight: 600;
+  background: var(--orange-light);
+  color: var(--orange-dark);
+  padding: 4px 10px;
+  border-radius: var(--radius-pill);
+}
+
+/* =============================================
+   HOW IT WORKS
+   ============================================= */
+.how {
+  background: var(--dark);
+  color: var(--white);
+  padding: 88px 0;
+}
+
+.how .section-head h2 {
+  color: var(--white);
+}
+
+.how .eyebrow-dark {
+  color: var(--orange);
+}
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.step {
+  border-top: 2px solid rgba(252, 128, 25, 0.4);
+  padding-top: 24px;
+}
+
+.step-no {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  color: var(--orange);
+  font-weight: 700;
+}
+
+.step h3 {
+  margin: 12px 0 10px;
+  font-size: 1.25rem;
+  color: var(--white);
+}
+
+.step p {
+  font-size: 0.92rem;
+  color: rgba(255, 255, 255, 0.65);
+  line-height: 1.7;
+}
+
+/* =============================================
+   REVIEWS
+   ============================================= */
+.reviews {
+  padding: 88px 0;
+  background: var(--orange-light);
+}
+
+.review-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.review-card {
+  background: var(--white);
+  border-radius: var(--radius-md);
+  padding: 28px;
+  box-shadow: var(--shadow-card);
+  border-left: 4px solid var(--orange);
+}
+
+.review-card p {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--dark-soft);
+  margin-bottom: 16px;
+}
+
+.review-card cite {
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: var(--orange);
+  font-style: normal;
+  font-weight: 700;
+}
+
+/* =============================================
+   CTA BANNER
+   ============================================= */
+.cta {
+  background: var(--orange);
+  color: var(--white);
+  padding: 96px 0;
+  text-align: center;
+}
+
+.cta h2 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  max-width: 640px;
+  margin: 0 auto;
+  color: var(--white);
+}
+
+.cta p {
+  margin: 16px auto 36px;
+  font-size: 1.05rem;
+  opacity: 0.9;
+  max-width: 440px;
+}
+
+.cta .btn-primary {
+  background: var(--white);
+  color: var(--orange);
+  font-size: 1.05rem;
+  padding: 16px 44px;
+}
+
+.cta .btn-primary:hover {
+  background: var(--dark);
+  color: var(--white);
+  box-shadow: none;
+}
+
+/* =============================================
+   FOOTER
+   ============================================= */
+.site-footer {
+  background: var(--dark);
+  color: var(--white);
+  padding: 44px 0;
+}
+
+.footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.logo-footer {
+  font-size: 1.2rem;
+  color: var(--orange);
+}
+
+.footer-note {
+  font-size: 0.82rem;
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.footer-links {
+  display: flex;
+  gap: 24px;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.75);
+}
+
+.footer-links a:hover {
+  color: var(--orange);
+}
+
+/* =============================================
+   RESPONSIVE
+   ============================================= */
+@media (max-width: 900px) {
+  .hero-inner {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-visual {
+    order: -1;
+  }
+
+  .menu-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .steps {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+
+  .review-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 640px) {
+  .main-nav {
+    display: none;
+  }
+
+  .menu-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .review-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-stats {
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .wrap {
+    padding: 0 20px;
+  }
+
+  .hero {
+    padding: 48px 0 40px;
+  }
+}

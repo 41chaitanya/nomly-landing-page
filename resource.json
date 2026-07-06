@@ -1,0 +1,103 @@
+{
+  "project": "Nomly - Food Delivery Landing Page",
+  "note": "This file lists every external/visual resource referenced in index.html and style.css. No files are embedded as binaries — images are hotlinked from Unsplash, fonts from Google Fonts, and icons/logo/animated badge are hand-drawn inline SVG (no downloads needed for those).",
+
+  "fonts": [
+    {
+      "name": "Bricolage Grotesque",
+      "role": "Display / headings",
+      "weights": [400, 800],
+      "source": "Google Fonts",
+      "url": "https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&display=swap"
+    },
+    {
+      "name": "Inter",
+      "role": "Body text",
+      "weights": [400, 500, 600],
+      "source": "Google Fonts",
+      "url": "https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+    },
+    {
+      "name": "Space Mono",
+      "role": "Prices, tags, eyebrows, mono accents",
+      "weights": [400, 700],
+      "source": "Google Fonts",
+      "url": "https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&display=swap"
+    }
+  ],
+
+  "images": [
+    {
+      "id": "hero-burger",
+      "usage": "Hero section — blob-shaped feature image",
+      "alt": "Loaded double cheeseburger with fries",
+      "url": "https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=900&q=80",
+      "source": "Unsplash (placeholder — replace with licensed/owned photo before production use)"
+    },
+    {
+      "id": "menu-pizza",
+      "usage": "Menu card — Stovetop Margherita",
+      "alt": "Margherita pizza fresh from the oven",
+      "url": "https://images.unsplash.com/photo-1513104890138-7c749659a591?auto=format&fit=crop&w=700&q=80",
+      "source": "Unsplash (placeholder)"
+    },
+    {
+      "id": "menu-burger",
+      "usage": "Menu card — Double Smash Burger",
+      "alt": "Smash burger with crispy fries",
+      "url": "https://images.unsplash.com/photo-1571091718767-18b5b1457add?auto=format&fit=crop&w=700&q=80",
+      "source": "Unsplash (placeholder)"
+    },
+    {
+      "id": "menu-sushi",
+      "usage": "Menu card — Chef's Roll Set",
+      "alt": "Assorted sushi rolls on a wooden board",
+      "url": "https://images.unsplash.com/photo-1553621042-f6e147245754?auto=format&fit=crop&w=700&q=80",
+      "source": "Unsplash (placeholder)"
+    },
+    {
+      "id": "menu-ramen",
+      "usage": "Menu card — Miso Butter Ramen",
+      "alt": "Bowl of spicy ramen noodles",
+      "url": "https://images.unsplash.com/photo-1551504734-1cba6c3c1e7f?auto=format&fit=crop&w=700&q=80",
+      "source": "Unsplash (placeholder)"
+    },
+    {
+      "id": "menu-pancakes",
+      "usage": "Menu card — Stacked Pancakes",
+      "alt": "Stack of pancakes with syrup",
+      "url": "https://images.unsplash.com/photo-1567620905732-2d1ec7ab7445?auto=format&fit=crop&w=700&q=80",
+      "source": "Unsplash (placeholder)"
+    },
+    {
+      "id": "menu-donuts",
+      "usage": "Menu card — Glazed Donut Trio",
+      "alt": "Glazed donuts on a plate",
+      "url": "https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=700&q=80",
+      "source": "Unsplash (placeholder)"
+    }
+  ],
+
+  "icons_and_logo": [
+    {
+      "id": "logo-mark",
+      "usage": "Header logo + footer logo",
+      "type": "inline SVG (hand-drawn, not a file — embedded directly in index.html)",
+      "description": "A circular outline with a simple to-go bag / cloche silhouette, drawn as an SVG <path>, colored via CSS currentColor."
+    },
+    {
+      "id": "delivery-stamp",
+      "usage": "Hero section rotating badge (signature element)",
+      "type": "inline SVG with CSS animation",
+      "description": "Circular 'stamp' with curved text path (HOT • FRESH • FAST • ON THE WAY) and a center countdown '20:00', rotates continuously via CSS keyframes."
+    }
+  ],
+
+  "gifs": [],
+
+  "how_to_customize": {
+    "images": "Swap any 'url' value above with your own hosted image (or a local path like 'images/burger.jpg') and update the matching src= in index.html.",
+    "fonts": "To self-host fonts instead of Google Fonts, download the .woff2 files and replace the <link> tags in index.html with @font-face rules in style.css.",
+    "logo": "Replace the inline SVG in the .logo elements with an <img> tag pointing to your real logo file if you have one."
+  }
+}
