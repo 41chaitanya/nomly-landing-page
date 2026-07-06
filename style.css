@@ -631,54 +631,250 @@ h1, h2, h3 {
 }
 
 /* =============================================
-   RESPONSIVE
+   HAMBURGER MENU BUTTON (mobile only)
+   ============================================= */
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 36px;
+  height: 36px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px;
+}
+
+.nav-toggle span {
+  display: block;
+  height: 2px;
+  width: 100%;
+  background: var(--dark);
+  border-radius: 2px;
+  transition: transform 0.25s, opacity 0.25s;
+}
+
+/* Animate to X when open */
+.nav-toggle.is-open span:nth-child(1) {
+  transform: translateY(7px) rotate(45deg);
+}
+
+.nav-toggle.is-open span:nth-child(2) {
+  opacity: 0;
+}
+
+.nav-toggle.is-open span:nth-child(3) {
+  transform: translateY(-7px) rotate(-45deg);
+}
+
+/* Mobile nav drawer */
+.mobile-nav {
+  display: none;
+  flex-direction: column;
+  gap: 0;
+  background: var(--white);
+  border-top: 1px solid var(--gray-light);
+  padding: 8px 0 16px;
+}
+
+.mobile-nav.is-open {
+  display: flex;
+}
+
+.mobile-nav a {
+  padding: 14px 20px;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--dark-soft);
+  border-bottom: 1px solid var(--gray-light);
+}
+
+.mobile-nav a:last-child {
+  border-bottom: none;
+}
+
+.mobile-nav a:hover {
+  color: var(--orange);
+  background: var(--orange-light);
+}
+
+/* =============================================
+   RESPONSIVE — TABLET (≤ 900px)
    ============================================= */
 @media (max-width: 900px) {
+
+  /* Hero: stack image above copy */
   .hero-inner {
     grid-template-columns: 1fr;
+    gap: 32px;
   }
 
   .hero-visual {
     order: -1;
   }
 
+  .hero-blob {
+    max-width: 320px;
+    margin: 0 auto;
+  }
+
+  /* Menu: 2 columns */
   .menu-grid {
     grid-template-columns: repeat(2, 1fr);
   }
 
+  /* How it works: single column */
   .steps {
     grid-template-columns: 1fr;
     gap: 24px;
   }
 
+  /* Reviews: 2 columns */
   .review-grid {
     grid-template-columns: repeat(2, 1fr);
   }
+
+  /* Footer: stack vertically */
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
 }
 
+/* =============================================
+   RESPONSIVE — MOBILE (≤ 640px)
+   ============================================= */
 @media (max-width: 640px) {
+
+  /* Wrapper padding */
+  .wrap {
+    padding: 0 16px;
+  }
+
+  /* Header: hide desktop nav, show hamburger */
   .main-nav {
     display: none;
   }
 
+  .nav-toggle {
+    display: flex;
+  }
+
+  /* Hide desktop "Order now" button in header on mobile */
+  .header-inner .btn-small {
+    display: none;
+  }
+
+  /* Hero */
+  .hero {
+    padding: 36px 0 32px;
+  }
+
+  .hero-blob {
+    max-width: 260px;
+  }
+
+  /* Hide the rotating stamp on very small screens to avoid overflow */
+  .stamp {
+    width: 90px;
+    height: 90px;
+    top: -16px;
+    right: -4px;
+  }
+
+  .hero h1 {
+    font-size: 2.2rem;
+  }
+
+  .hero-sub {
+    font-size: 0.95rem;
+  }
+
+  .hero-actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .hero-actions .btn {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero-stats {
+    gap: 20px;
+    flex-wrap: wrap;
+    max-width: 100%;
+  }
+
+  /* Menu */
+  .menu {
+    padding: 56px 0;
+  }
+
   .menu-grid {
     grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .tabs {
+    gap: 8px;
+  }
+
+  .tab {
+    padding: 8px 16px;
+    font-size: 0.82rem;
+  }
+
+  /* How it works */
+  .how {
+    padding: 56px 0;
+  }
+
+  /* Reviews */
+  .reviews {
+    padding: 56px 0;
   }
 
   .review-grid {
     grid-template-columns: 1fr;
+    gap: 16px;
   }
 
-  .hero-stats {
-    gap: 24px;
+  /* CTA */
+  .cta {
+    padding: 64px 0;
+  }
+
+  .cta h2 {
+    font-size: 1.7rem;
+  }
+
+  .cta .btn-primary {
+    width: 100%;
+    max-width: 320px;
+    padding: 16px 24px;
+  }
+
+  /* Section headings */
+  .section-head {
+    margin-bottom: 28px;
+  }
+
+  /* Footer */
+  .site-footer {
+    padding: 32px 0;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+  }
+
+  .footer-links {
+    gap: 16px;
     flex-wrap: wrap;
-  }
-
-  .wrap {
-    padding: 0 20px;
-  }
-
-  .hero {
-    padding: 48px 0 40px;
   }
 }

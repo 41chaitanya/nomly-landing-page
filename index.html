@@ -25,17 +25,33 @@
       <span>Nomly</span>
     </a>
 
-    <!-- Nav -->
+    <!-- Nav (desktop) -->
     <nav class="main-nav">
       <a href="#menu">Menu</a>
       <a href="#how">How it works</a>
       <a href="#reviews">Reviews</a>
     </nav>
 
-    <!-- CTA -->
+    <!-- CTA (desktop) -->
     <a href="#order" class="btn btn-small">Order now</a>
 
+    <!-- Hamburger (mobile) -->
+    <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
   </div>
+
+  <!-- Mobile nav drawer -->
+  <nav class="mobile-nav" id="mobile-nav">
+    <a href="#menu"    onclick="closeMobileNav()">Menu</a>
+    <a href="#how"     onclick="closeMobileNav()">How it works</a>
+    <a href="#reviews" onclick="closeMobileNav()">Reviews</a>
+    <a href="#order"   onclick="closeMobileNav()" style="color:var(--orange);font-weight:600;">Order now →</a>
+  </nav>
+
 </header>
 
 <!-- ===== HERO ===== -->
@@ -309,16 +325,15 @@
 
 <!-- ===== FILTER SCRIPT ===== -->
 <script>
+  // --- Category filter tabs ---
   const tabs = document.querySelectorAll('.tab');
   const cards = document.querySelectorAll('.food-card');
 
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
-      // Update active tab
       tabs.forEach(t => t.classList.remove('is-active'));
       tab.classList.add('is-active');
 
-      // Filter cards
       const filter = tab.dataset.filter;
       cards.forEach(card => {
         if (filter === 'all' || card.dataset.cat === filter) {
@@ -328,6 +343,29 @@
         }
       });
     });
+  });
+
+  // --- Hamburger menu toggle ---
+  const navToggle = document.querySelector('.nav-toggle');
+  const mobileNav = document.getElementById('mobile-nav');
+
+  navToggle.addEventListener('click', () => {
+    const isOpen = mobileNav.classList.toggle('is-open');
+    navToggle.classList.toggle('is-open', isOpen);
+    navToggle.setAttribute('aria-expanded', isOpen);
+  });
+
+  function closeMobileNav() {
+    mobileNav.classList.remove('is-open');
+    navToggle.classList.remove('is-open');
+    navToggle.setAttribute('aria-expanded', 'false');
+  }
+
+  // Close nav when clicking outside
+  document.addEventListener('click', (e) => {
+    if (!navToggle.contains(e.target) && !mobileNav.contains(e.target)) {
+      closeMobileNav();
+    }
   });
 </script>
 
